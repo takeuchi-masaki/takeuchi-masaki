@@ -1,4 +1,7 @@
 ### Hi there 👋
+VS Code C++ Snippets for Competitive Programming:  
+https://github.com/takeuchi-masaki/takeuchi-masaki/blob/main/vscodecpp-snippets.txt
+
 
 <!--
 **takeuchi-masaki/takeuchi-masaki** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
