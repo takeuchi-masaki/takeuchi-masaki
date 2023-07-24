@@ -6,12 +6,12 @@
             "typedef long long ll;",
             "using namespace std;",
             "",
-            "void solve(){",
+            "void solve() {",
             "\t$0",
             "",
             "}",
             "",
-            "int main(){",
+            "int main() {",
             "\tcin.tie(nullptr)->sync_with_stdio(false);",
             "\tcin.exceptions(cin.failbit);",
             "\tint T = 1;",
@@ -30,7 +30,7 @@
             "typedef long long ll;",
             "using namespace std;",
             "",
-            "void solve(){",
+            "void solve() {",
             "\t$0",
             "",
             "}",
@@ -50,7 +50,7 @@
             "typedef long long ll;",
             "using namespace std;",
             "",
-            "int main(){",
+            "int main() {",
             "\t$0",
             "",
             "}"
@@ -79,10 +79,17 @@
     "random": {
         "prefix": "random",
         "body": [
-            "#define uid(a, b) uniform_int_distribution<ll>(a, b)(rng)",
+            "#define uid(a, b) uniform_int_distribution<int>(a, b)(rng)",
             "mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());"
         ],
         "description": "random"
+    },
+    "unsigned long long": {
+        "prefix": "unsigned long long",
+        "body": [
+            "typedef unsigned long long ull;"
+        ],
+        "description": "type definition ull"
     },
     "modular int": {
         "prefix": "modular int",
@@ -115,6 +122,11 @@
             "};"
         ],
         "description": "modular int"
+    },
+    "popcount": {
+        "prefix": "popcount",
+        "body": "__builtin_popcount($1)",
+        "description": "g++ builtin popcount (pre c++20)"
     },
     "vector vector int": {
         "prefix": "vvi",
@@ -178,14 +190,9 @@
         ],
         "description": "prime sieve"
     },
-    "size": {
-        "prefix": "sz",
-        "body": "(int)${1:s}.size()"
-    },
     "Miller-Rabin Prime Check": {
         "prefix": [
-            "miller-rabin",
-            "isprime"
+            "miller-rabin"
         ],
         "body": [
             "typedef unsigned long long ull;",
@@ -217,7 +224,6 @@
     },
     "Pollard's rho factorize": {
         "prefix": [
-            "factorize",
             "pollard rho"
         ],
         "body": [
@@ -254,7 +260,7 @@
             "    }",
             "    return __gcd(prd, n);",
             "}",
-            "vector<ull> factor(ull n) { // Pollard-Rho",
+            "vector<ull> factor(ull n) { // Pollard's rho",
             "    if (n == 1) return {};",
             "    if (isPrime(n)) return { n };",
             "    ull x = pollard(n);",
@@ -382,14 +388,13 @@
     },
     "powermod": {
         "prefix": [
-            "powmod",
             "modpow",
             "karatsuba"
         ],
         "body": [
             "const int MOD = int(1e9) + 7;",
             "",
-            "ll modpow(ll base, ll exp) {",
+            "ll powmod(ll base, ll exp) {",
             "\tbase %= MOD;",
             "\tll result = 1;",
             "\twhile (exp > 0) {",
@@ -405,7 +410,7 @@
     },
     "nCr": {
         "prefix": [
-            "nCr",
+            "choose",
             "comb"
         ],
         "body": [
@@ -505,7 +510,7 @@
         "prefix": "rabin karp",
         "body": [
             "$1mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());",
-            "const int p = uniform_int_distribution<int>(0, MOD)(rng);",
+            "const int p = uniform_int_distribution<int>(0, MOD - 1)(rng);",
             "const int MX_len = int(2e5) + 5;",
             "Mint curr(1);",
             "for (int i = 1; i < MX_len; i++) {",
